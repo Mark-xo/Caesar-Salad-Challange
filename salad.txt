@@ -6,9 +6,9 @@ acpid	It provides intelligent power management on a system and is used to notify
 addr2line	Used to convert addresses into file names and line numbers
 agetty	It is a Linux version of getty, which is a Unix program running on a host computer that manages physical or virtual terminals to allow multi user access
 alias	Instructs the shell to replace one string with another string while executing the commands
-amixer	It is a command line mixer for ALSA(Advanced Linux Sound Architecture) sound card driver
+amixer	It is a command line mixer for ALSA sound card driver
 aplay	It is a command line audio player for ALSA(Advanced Linux Sound Architecture) sound card drivers.
-aplaymidi	Used to play standard MIDI(Musical Instrument Digital Interface) files, by sending the content of a MIDI file to an ALSA(Advanced Linux Sound Architecture) MIDI port
+aplaymidi	Used to play standard MIDI(Musical Instrument Digital Interface) files, by sending the content of a MIDI file to an ALSA MIDI port
 apropos	It helps the user when they don’t remember the exact command but knows a few keywords related to the command that define its uses or functionality
 apt	Provides a high level CLI for the package management system
 aptitude	Opens up a highly builtin interface to interact with the package manager of the machine
@@ -39,7 +39,6 @@ bzcmp	Used to invoke the cmp utility on bzip2 compressed files
 bzdiff	Used to compare the bzip2 compressed files
 bzgrep	Used to search for a pattern or an expression but inside a bzip2 compressed file
 bzip2	Used to compress and decompress the files
-bzless	It does not have to read the entire input file before starting, so with a large file, it starts up faster
 bzmore	Used as a filter for CRT viewing of bzip2 compressed files, which are saved with .bz2 suffix
 cal	Used to see the calendar of a specific month or a whole year. By default, it shows current month’s calendar as output
 case	It is the best alternative when we had to use multiple if or elif on a single variable
@@ -104,7 +103,7 @@ dump	Used to backup the filesystem to some storage device
 dumpe2fs	Used to print the super block and blocks group information for the filesystem present on device
 dumpkeys	Used for the dump keyboard translation tables
 echo	Used to display line of text or string that are passed as an argument
-ed	Used for launching the ed text editor which is a line  based text editor with a minimal interface which makes it less complex for working on text files i.e creating, editing, displaying and manipulating files
+ed	Used for launching the ed text editor
 egrep	It treats the pattern as an extended regular expression and prints out the lines that match the pattern
 eject	It allows ejecting a removable media (typically a CD  ROM, floppy disk, tape, or JAZ or ZIP disk) using the software
 emacs	It is a editor having simple user interface. Also, there is no insert mode in this editor. It only have editing mode.
@@ -299,6 +298,6 @@ write	Allows a user to communicate with other users, by copying lines from one u
 xargs	Used to build and execute commands from standard input. It converts input received from standard input into arguments of a command
 yes	Used to print a continous output stream of given STRING. If STRING is not mentioned then it prints ‘y’
 zdiff	Used to invoke the diff program on files compressed via gzip
-zdump	Used to print the current time in the specified zone or you can say prints the current time in each zonename named on the command line
+zdump	Used to print the current time in the specified zone
 zgrep	Used to search out expressions from a given a file even if it is compressed
 zip	It is a compression and file packaging utility for Unix

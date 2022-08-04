@@ -1,4 +1,3 @@
-from ast import Delete
 import random
 import time,sys
 from os import system, name
@@ -47,31 +46,75 @@ label4.place(x=185,y=250)
 frame1 = Frame(root)
 frame1.pack(pady = 20 )
 
+a=random.randint(1,303)
+print(a)
+with open('salad.txt', 'r',encoding='utf-8') as f:
+    line=f.readlines()[a]
+    f.close()
+    w=line.split()[0]
+    print (w)
+    line=line.replace(w,'',1)
+    print (line)
+    # encrypt the line in caesar cipher
+    key = 12
+    cipher = ''
+    for char in line:
+        if char == ' ':
+            cipher += char
+        elif char.isupper():
+            cipher += chr((ord(char) + key - 65) % 26 + 65)
+        else:
+            cipher += chr((ord(char) + key - 97) % 26 + 97)
+global out
 
 
+def Submission():
+    inputtxt.place(x = 330, y = 453)
+    Submit.place(x=740,y=445)
+    root.update()
 
 
-# a=random.randint(1,308)
-# print(a)
-# with open('salad.txt', 'r',encoding='utf-8') as f:
-#     line=f.readlines()[a]
-#     f.close()
-#     w=line.split()[0]
-#     print (w)
-#     line=line.replace(w,'',1)
-#     print (line)
-#     # encrypt the line in caesar cipher
-#     key = 12
-#     cipher = ''
-#     for char in line:
-#         if char == ' ':
-#             cipher += char
-#         elif char.isupper():
-#             cipher += chr((ord(char) + key - 65) % 26 + 65)
-#         else:
-#             cipher += chr((ord(char) + key - 97) % 26 + 97)
-#     print (cipher)
-#     ans=input('Enter the answer: ')
+def takeInput():
+    INPUT = inputtxt.get("1.0", "end-1c")
+    print(INPUT)
+    if(INPUT != w):
+        inputtxt.delete("1.0", "end-1c")
+        output=tk.Label(root,text="Incorrect!",bg="#0b0c0b",fg="#69b183",font=myFont1)
+        output.place(x=500,y=500)
+        root.update()
+        output.destroy()
+        root.update()
+        time.sleep(1)
+        inputtxt.pack_forget()
+        Submit.pack_forget()
+        Submission()
+    else:
+        output=tk.Label(root,text="Correct!",bg="#0b0c0b",fg="#69b183",font=myFont1)
+        output.place(x=500,y=500)
+        root.update()
+        time.sleep(10)
+        root.destroy()
 
+    
+CipherFont=Font(family="VCR OSD Mono", size=15)
 
+label5=Text(root,height=4,bg = "#0b0c0b",fg = "#69b183",font=CipherFont,bd=2)
+label5.insert(1.0,cipher)
+label5.place(x = 200, y = 310)
+label5.configure(state="disabled")
+
+myFont2=Font(family="VCR OSD Mono", size=17)
+label6 = Label(text = "What is your answer? ",bg = "#0b0c0b",fg = "#69b183",font = myFont2)
+label6.place(x = 200, y = 410)
+
+TextBox=PhotoImage(file = "textbox.png")
+TextBOX = Label( root, image = TextBox,bd=0)
+TextBOX.place(x = 300, y = 440)
+
+inputtxt = Text(root, height = 2.3,width = 25,bg = "#0b0c0b",fg = "#69b183")
+inputtxt.configure(font=("VCR OSD Mono", 15))
+Submit=Button(root,text="Submit",bg="#0b0c0b",fg="#69b183",font=myFont1,command=lambda:takeInput(),bd=0)
+button=PhotoImage(file="button.png")
+Submit.config(image=button)
+Submission()
 root.mainloop()
