@@ -116,7 +116,7 @@ inputtxt.configure(font=("VCR OSD Mono", 15),insertbackground="white",insertwidt
 inputtxt.place(x = 330, y = 460)
 
 Submit=Button(root,text="Submit",bg="#0b0c0b",fg="#69b183",font=myFont1,command=lambda:takeInput(),bd=0)
-button=PhotoImage(file="button.png")
+button=PhotoImage(file="Button.png")
 Submit.config(image=button)
 
 inputtxt.bind("<Return>", lambda event: takeInput())
