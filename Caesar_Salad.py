@@ -81,7 +81,7 @@ def takeInput():
         output=tk.Label(root,text="Incorrect! TRY AGAIN",bg="#0b0c0b",fg="#69b183",font=myFont2)
         output.place(x=500,y=520)
         root.update()
-        time.sleep(3)
+        time.sleep(2)
         output.destroy()
         root.update()
         time.sleep(1)
