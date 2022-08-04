@@ -1,3 +1,4 @@
+from ast import Delete
 import random
 import time,sys
 from os import system, name
@@ -10,36 +11,44 @@ root.geometry("1280x606")
 root.title("Caesar Salad")
 root.grid()
 bg = PhotoImage(file = "background.png")
+
 # Show image using label
 label1 = Label( root, image = bg)
 label1.place(x = 0, y = 0)
 
-myFont=Font(family="VCR OSD Mono", size=20)
+
+count=0
+LoadingFont=Font(family="VCR OSD Mono", size=30)
+blank=tk.Label(root,text="",bg="#0b0c0b",fg="#69b183")
+blank.pack(pady=12,padx=200,side=LEFT)
+while(count<10):
+    x=tk.Label(root, text='#',bg = "#0b0c0b",fg = "#69b183",font = LoadingFont)
+    x.pack(pady=15,side=LEFT,padx =10)
+    root.update() # allow window to catch up
+    time.sleep(0.1)
+    count += 1
+
+
+labelb = Label( root, image = bg)
+labelb.place(x = 0, y = 0)
+
+
+myFont=Font(family="VCR OSD Mono", size=30)
 label2 = Label( root, text = "CAESAR SALAD",bg = "#0b0c0b",fg = "#69b183",font = myFont)
-label2.pack(pady = 100)
+label2.place(x = 520, y = 150)
+
 myFont1=Font(family="VCR OSD Mono", size=15)
 label3 = Label( root, text = "The Great Julius Caesar has presented his 1100 soldiers with a bowl of salad",bg = "#0b0c0b",fg = "#69b183",font = myFont1)
-label3.pack(pady=10)
+label3.place(x = 200, y = 220)
+
 label4=Label(root,text="You have been given one of the bowl, can you solve the mystery and save the tux",bg="#0b0c0b",fg="#69b183",font=myFont1)
-label4.pack(pady=10)
+label4.place(x=185,y=250)
 # Create Frame
 frame1 = Frame(root)
 frame1.pack(pady = 20 )
 
 
 
-# def loading_screen():
-#     system('cls')
-#     print("\n\n\n\n\n\n\t\t\t\t",end="")
-#     # Loading screen of # in the center of the screen with a delaay of 0.1 seconds
-#     for i in range(0,10):
-#         print("\u001b[32;1m#\u001b[0m",end="", flush=True)
-#         time.sleep(0.1)
-#     print("\n")
-#     system('cls')
-
-
-# loading_screen()
 
 
 # a=random.randint(1,308)
@@ -63,10 +72,6 @@ frame1.pack(pady = 20 )
 #             cipher += chr((ord(char) + key - 97) % 26 + 97)
 #     print (cipher)
 #     ans=input('Enter the answer: ')
-#     if ans==w:
-#         print ('Correct!')
-#     else:
-#         print('Wrong!')
 
 
 root.mainloop()
