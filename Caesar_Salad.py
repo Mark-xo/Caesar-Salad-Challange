@@ -69,7 +69,6 @@ global out
 
 
 def Submission():
-    inputtxt.place(x = 330, y = 453)
     Submit.place(x=740,y=445)
     root.update()
 
@@ -79,20 +78,21 @@ def takeInput():
     print(INPUT)
     if(INPUT != w):
         inputtxt.delete("1.0", "end-1c")
-        output=tk.Label(root,text="Incorrect!",bg="#0b0c0b",fg="#69b183",font=myFont1)
-        output.place(x=500,y=500)
+        output=tk.Label(root,text="Incorrect! TRY AGAIN",bg="#0b0c0b",fg="#69b183",font=myFont2)
+        output.place(x=500,y=520)
         root.update()
+        time.sleep(3)
         output.destroy()
         root.update()
         time.sleep(1)
-        inputtxt.pack_forget()
+        # inputtxt.pack_forget()
         Submit.pack_forget()
         Submission()
     else:
-        output=tk.Label(root,text="Correct!",bg="#0b0c0b",fg="#69b183",font=myFont1)
-        output.place(x=500,y=500)
+        output=tk.Label(root,text="Correct!",bg="#0b0c0b",fg="#69b183",font=myFont2)
+        output.place(x=500,y=520)
         root.update()
-        time.sleep(10)
+        time.sleep(1)
         root.destroy()
 
     
@@ -107,14 +107,20 @@ myFont2=Font(family="VCR OSD Mono", size=17)
 label6 = Label(text = "What is your answer? ",bg = "#0b0c0b",fg = "#69b183",font = myFont2)
 label6.place(x = 200, y = 410)
 
-TextBox=PhotoImage(file = "textbox.png")
+TextBox=PhotoImage(file = "TextBox.png")
 TextBOX = Label( root, image = TextBox,bd=0)
 TextBOX.place(x = 300, y = 440)
 
-inputtxt = Text(root, height = 2.3,width = 25,bg = "#0b0c0b",fg = "#69b183")
-inputtxt.configure(font=("VCR OSD Mono", 15))
+inputtxt = Text(root, height = 1.4,width = 40,bg = "#0b0c0b",fg = "#69b183",bd=0)
+inputtxt.configure(font=("VCR OSD Mono", 15),insertbackground="white",insertwidth=1)
+inputtxt.place(x = 330, y = 460)
+
 Submit=Button(root,text="Submit",bg="#0b0c0b",fg="#69b183",font=myFont1,command=lambda:takeInput(),bd=0)
 button=PhotoImage(file="button.png")
 Submit.config(image=button)
+
+inputtxt.bind("<Return>", lambda event: takeInput())
+
 Submission()
+
 root.mainloop()
